@@ -667,7 +667,11 @@ class SquadProcessor(DataProcessor):
                         if is_training:
                             answer = qa["answers"][0]
                             answer_text = answer["text"]
-                            start_position_character = answer["answer_start"]
+                            # start_position_character = answer["answer_start"]
+                            start_position_character = context_text.find(answer_text)
+                            if start_position_character == -1:
+                                continue
+
                         else:
                             answers = qa["answers"]
 
