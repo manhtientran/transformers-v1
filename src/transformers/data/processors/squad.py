@@ -752,9 +752,6 @@ class SquadExample:
 
         # Start and end positions only has a value during evaluation.
         if start_position_character is not None and not is_impossible:
-            print(char_to_word_offset)
-            print(start_position_character)
-            print("===")
             self.start_position = char_to_word_offset[start_position_character]
             self.end_position = char_to_word_offset[
                 min(start_position_character + len(answer_text) - 1, len(char_to_word_offset) - 1)
